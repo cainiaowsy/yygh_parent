@@ -1,6 +1,7 @@
 package com.wsy.yygh.hosp.controller;
 
 import com.atguigu.yygh.model.hosp.HospitalSet;
+import com.wsy.yygh.common.result.Result;
 import com.wsy.yygh.hosp.service.HospitalSetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,13 +19,16 @@ public class HospitalSetController {
     public Result findAllHospitalSet(){
         //调用service方法
         List<HospitalSet> list = hospitalSetService.list();
-        return list;
+        return Result.ok(list);
     }
 
     //2.删除医院设置
     @DeleteMapping("{id}")
-    public boolean removeHospSet(@PathVariable Long id){
+    public Result removeHospSet(@PathVariable Long id){
         boolean flag = hospitalSetService.removeById(id);
-        return flag;
+        if (flag){
+            return Result.ok();
+        }
+        return Result.fail();
     }
 }
