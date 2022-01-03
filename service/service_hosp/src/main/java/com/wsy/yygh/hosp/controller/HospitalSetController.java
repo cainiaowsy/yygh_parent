@@ -15,7 +15,7 @@ public class HospitalSetController {
 
     //1.查询医院设置表的信息
     @GetMapping("findAll")
-    public  findAllHospitalSet(){
+    public Result findAllHospitalSet(){
         //调用service方法
         List<HospitalSet> list = hospitalSetService.list();
         return list;
