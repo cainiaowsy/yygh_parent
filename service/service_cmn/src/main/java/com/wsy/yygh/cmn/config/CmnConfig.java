@@ -1,4 +1,4 @@
-package com.wsy.yygh.hosp.config;
+package com.wsy.yygh.cmn.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("com.wsy.yygh.hosp.mapper")
-public class HospitalConfig {
+@MapperScan("com.wsy.yygh.cmn.mapper")
+public class CmnConfig {
     @Bean
     public PaginationInterceptor paginationInterceptor(){
         return new PaginationInterceptor();
